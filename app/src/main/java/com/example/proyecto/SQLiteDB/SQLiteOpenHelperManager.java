@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 
-
 public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "proyecto";
     private static final int DATABASE_VERSION = 1;
@@ -32,7 +31,6 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
 
     }
 
-
     public void crearTablaUsuarios() {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS usuarios"); // eliminamos la tabla existente si existe
@@ -44,14 +42,28 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS tareas"); // eliminamos la tabla existente si existe
         db.execSQL(
                "CREATE TABLE tareas(" +
-                       "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                       "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                        "id_usuario INTEGER NOT NULL,"+
-                      "titulo TEXT NOT NULL," +
+                       "id_seccion INTEGER NOT NULL,"+
+                       "titulo TEXT NOT NULL," +
                        "descripcion TEXT," +
                        "prioridad TEXT NOT NULL,"+
                        "lista TEXT,"+
                        "fecha TEXT NOT NULL,"+
-                         "FOREIGN KEY (id_usuario) REFERENCES usuarios(id))"
+                       "FOREIGN KEY (id_seccion) REFERENCES secciones(id),"+
+                       "FOREIGN KEY (id_usuario) REFERENCES usuarios(id))"
+        );
+    }
+
+    public void crearTablaSecciones(){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS secciones"); // eliminamos la tabla existente si existe
+        db.execSQL(
+                "CREATE TABLE secciones(" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        "id_usuario INTEGER NOT NULL,"+
+                        "nombre TEXT NOT NULL," +
+                        "FOREIGN KEY (id_usuario) REFERENCES usuarios(id))"
         );
     }
 
@@ -70,11 +82,11 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
        // sqLiteDatabase.execSQL("insert into usuarios (nombre, password) values ('Raquel',3333)");
        // sqLiteDatabase.execSQL("insert into usuarios (nombre, password) values ('Karo',4444)");
 
-        //Cursos----------------------------------------------------------------------------------
-       // sqLiteDatabase.execSQL("insert into Cursos (nombre) values ('Paradigmas')");
-       // sqLiteDatabase.execSQL("insert into Cursos (nombre) values ('Moviles')");
-       // sqLiteDatabase.execSQL("insert into Cursos (nombre) values ('Videojuegos')");
-       // sqLiteDatabase.execSQL("insert into Cursos (nombre) values ('Sistemas')");
+        //Seccion----------------------------------------------------------------------------------
+       // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Paradigmas')");
+       // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Moviles')");
+       // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Videojuegos')");
+       // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Sistemas')");
 
 
 

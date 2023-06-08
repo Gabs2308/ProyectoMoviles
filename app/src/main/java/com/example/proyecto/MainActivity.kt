@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         SQLiteOpenHelperManager = SQLiteOpenHelperManager(this)
         SQLiteOpenHelperManager.crearTablaUsuarios()
 
+        //SQLiteOpenHelperManager.crearTablaSecciones()
+        //SQLiteOpenHelperManager.crearTablaTareas()
 
         val loginButton = findViewById<Button>(R.id.loginbtn)
 

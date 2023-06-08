@@ -1,12 +1,12 @@
 package com.example.proyecto.Modelo;
 
-public class Cursos {
+public class Seccion {
     String id_curso;
     String nombre;
 
     String id_usuario;
 
-    public Cursos(String id_curso, String nombre, String id_usuario) {
+    public Seccion(String id_curso, String nombre, String id_usuario) {
         this.id_curso = id_curso;
         this.nombre = nombre;
         this.id_usuario = id_usuario;
