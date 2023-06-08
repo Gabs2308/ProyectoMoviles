@@ -1,23 +1,24 @@
 package com.example.proyecto.Modelo;
 
 public class Seccion {
-    String id_curso;
+    String id;
     String nombre;
-
     String id_usuario;
 
-    public Seccion(String id_curso, String nombre, String id_usuario) {
-        this.id_curso = id_curso;
+    public Seccion(String nombre, String id_usuario) {
         this.nombre = nombre;
         this.id_usuario = id_usuario;
     }
 
-    public String getId_curso() {
-        return id_curso;
+    public Seccion() {
     }
 
-    public void setId_curso(String id_curso) {
-        this.id_curso = id_curso;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
