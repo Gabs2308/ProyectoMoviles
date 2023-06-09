@@ -24,11 +24,6 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
                //         "password TEXT NOT NULL)"
         //);
 
-
-
-
-        burnedData(sqLiteDatabase);
-
     }
 
     public void crearTablaUsuarios() {
@@ -48,7 +43,6 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
                        "titulo TEXT NOT NULL," +
                        "descripcion TEXT," +
                        "prioridad TEXT NOT NULL,"+
-                       "lista TEXT,"+
                        "fecha TEXT NOT NULL,"+
                        "FOREIGN KEY (id_seccion) REFERENCES secciones(id),"+
                        "FOREIGN KEY (id_usuario) REFERENCES usuarios(id))"
@@ -73,9 +67,9 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
     }
 
 
-    private void burnedData(SQLiteDatabase sqLiteDatabase) {
+    public void burnedData() {
 
-
+        SQLiteDatabase db = getWritableDatabase();
         //USUARIOS----------------------------------------------------------------------------------
         //sqLiteDatabase.execSQL("insert into usuarios (nombre, password) values ('Gabriel',1111)");
        // sqLiteDatabase.execSQL("insert into usuarios (nombre, password) values ('Keisy',2222)");
@@ -83,7 +77,10 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
        // sqLiteDatabase.execSQL("insert into usuarios (nombre, password) values ('Karo',4444)");
 
         //Seccion----------------------------------------------------------------------------------
-       // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Paradigmas')");
+        db.execSQL("insert into secciones (id_usuario ,nombre) values (1, 'General')");
+        db.execSQL("insert into secciones (id_usuario ,nombre) values (2, 'General')");
+        db.execSQL("insert into secciones (id_usuario ,nombre) values (3, 'General')");
+        db.execSQL("insert into secciones (id_usuario ,nombre) values (4, 'General')");
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Moviles')");
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Videojuegos')");
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Sistemas')");

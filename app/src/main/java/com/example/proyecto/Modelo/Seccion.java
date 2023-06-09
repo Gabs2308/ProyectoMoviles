@@ -1,11 +1,11 @@
 package com.example.proyecto.Modelo;
 
 public class Seccion {
-    String id;
+    int id;
     String nombre;
-    String id_usuario;
+    int id_usuario;
 
-    public Seccion(String nombre, String id_usuario) {
+    public Seccion(String nombre, int id_usuario) {
         this.nombre = nombre;
         this.id_usuario = id_usuario;
     }
@@ -13,11 +13,11 @@ public class Seccion {
     public Seccion() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -29,11 +29,11 @@ public class Seccion {
         this.nombre = nombre;
     }
 
-    public String getId_usuario() {
+    public int getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(String id_usuario) {
+    public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
     }
 }

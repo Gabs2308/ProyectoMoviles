@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Spinner
 import com.example.proyecto.Modelo.Tarea
 import com.example.proyecto.SQLiteDB.DAO
@@ -30,13 +29,20 @@ class New : AppCompatActivity() {
         val titulo: EditText = findViewById(R.id.editTextTextTittle)
         val descripcion: EditText = findViewById(R.id.editTextTextDescript)
         val spinnerPrioridad: Spinner = findViewById(R.id.spPriority)
-        val lista: EditText = findViewById(R.id.editTextTextList)
+        val spinnerSecciones: Spinner = findViewById(R.id.spSecciones)
         val btnFecha: Button = findViewById(R.id.btnFecha)
 
-        val opciones = listOf("Select a priority","1", "2", "3")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
+        val prioridades = listOf("Select a priority","1", "2", "3")
+        val secciones = DAO.mostrarSecciones(this, idUsuario)
+        secciones.add(0, "Select a section")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, prioridades)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerPrioridad.adapter = adapter
+
+        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, secciones)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerSecciones.adapter = adapter2
 
         cancelbtn.setOnClickListener {
             val intent = Intent(this, ToDoList::class.java)
@@ -46,8 +52,8 @@ class New : AppCompatActivity() {
 
         enviarbtn.setOnClickListener{
             val tareaNueva: Tarea = Tarea(
-                idUsuario!!.toInt(), titulo.text.toString(), descripcion.text.toString(),
-                spinnerPrioridad.getItemAtPosition(spinnerPrioridad.selectedItemPosition).toString(), lista.text.toString(), fecha)
+                idUsuario!!.toInt(),DAO.idSeccion(this, spinnerSecciones.getItemAtPosition(spinnerSecciones.selectedItemPosition).toString(), idUsuario.toInt()) , titulo.text.toString(), descripcion.text.toString(),
+                spinnerPrioridad.getItemAtPosition(spinnerPrioridad.selectedItemPosition).toString(), fecha)
 
             DAO.insertarTarea(this, tareaNueva)
             val intent = Intent(this, ToDoList::class.java)

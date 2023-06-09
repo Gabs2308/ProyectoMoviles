@@ -3,20 +3,22 @@ package com.example.proyecto.Modelo;
 public class Tarea {
     private int id;
     private int idUsuario;
+    private int idSeccion;
     private String titulo;
     private String descripcion;
     private String prioridad;
-    private String lista;
     private String fecha;
 
-    public Tarea(int idUsuario, String titulo, String descripcion, String prioridad, String lista, String fecha) {
+
+    public Tarea(int idUsuario, int idSeccion, String titulo, String descripcion, String prioridad, String fecha) {
         this.idUsuario = idUsuario;
+        this.idSeccion = idSeccion;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
-        this.lista = lista;
         this.fecha = fecha;
     }
+
 
     public Tarea() {
     }
@@ -28,7 +30,12 @@ public class Tarea {
     public void setId(int id) {
         this.id = id;
     }
-
+    public int getIdSeccion() {
+        return idSeccion;
+    }
+    public void setIdSeccion(int idSeccion) {
+        this.idSeccion = idSeccion;
+    }
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -61,13 +68,6 @@ public class Tarea {
         this.prioridad = prioridad;
     }
 
-    public String getLista() {
-        return lista;
-    }
-
-    public void setLista(String lista) {
-        this.lista = lista;
-    }
 
     public String getFecha() {
         return fecha;

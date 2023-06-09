@@ -2,6 +2,7 @@ package com.example.proyecto
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,8 +20,10 @@ class MainActivity : AppCompatActivity() {
         SQLiteOpenHelperManager = SQLiteOpenHelperManager(this)
         SQLiteOpenHelperManager.crearTablaUsuarios()
 
-        //SQLiteOpenHelperManager.crearTablaSecciones()
-        //SQLiteOpenHelperManager.crearTablaTareas()
+//        SQLiteOpenHelperManager.crearTablaSecciones()
+//        SQLiteOpenHelperManager.crearTablaTareas()
+//
+//        SQLiteOpenHelperManager.burnedData()
 
         val loginButton = findViewById<Button>(R.id.loginbtn)
 
