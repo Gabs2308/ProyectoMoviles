@@ -1,13 +1,13 @@
 package com.example.proyecto
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import com.example.proyecto.SQLiteDB.SQLiteOpenHelperManager
 
 class MainActivity : AppCompatActivity() {

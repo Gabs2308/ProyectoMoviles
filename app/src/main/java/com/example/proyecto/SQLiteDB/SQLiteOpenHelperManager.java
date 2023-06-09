@@ -1,9 +1,8 @@
 package com.example.proyecto.SQLiteDB;
-
+import org.jetbrains.annotations.Nullable;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import androidx.annotation.Nullable;
 
 
 public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
@@ -84,8 +83,6 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Moviles')");
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Videojuegos')");
        // sqLiteDatabase.execSQL("insert into Seccion (nombre) values ('Sistemas')");
-
-
 
     }
 }

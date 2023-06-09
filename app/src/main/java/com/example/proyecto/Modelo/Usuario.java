@@ -5,15 +5,12 @@ package com.example.proyecto.Modelo;
 public class Usuario {
     private Integer id;
     private String nombre;
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     private String password;
 
 

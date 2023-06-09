@@ -28,7 +28,7 @@
         android:layout_marginBottom="623dp"
         android:gravity="center"
         android:text="TO DO LIST"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="50sp"
         android:textStyle="bold"
         android:visibility="visible"
@@ -55,19 +55,20 @@
     <EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="400dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:background="#CCCCCC"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="ADD A SECTION"
+        android:hint="Agregar sección"
         android:inputType="textMultiLine"
+        android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.965" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
