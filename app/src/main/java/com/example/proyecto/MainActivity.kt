@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         SQLiteOpenHelperManager = SQLiteOpenHelperManager(this)
         SQLiteOpenHelperManager.crearTablaUsuarios()
 
-       SQLiteOpenHelperManager.crearTablaSecciones()
+       //SQLiteOpenHelperManager.crearTablaSecciones()
 //        SQLiteOpenHelperManager.crearTablaTareas()
 //
 //        SQLiteOpenHelperManager.burnedData()
