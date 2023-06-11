@@ -15,8 +15,8 @@
         android:scaleType="centerCrop"
         android:src="@drawable/fondo"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="-107dp"
-        tools:layout_editor_absoluteY="-244dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -44,30 +44,46 @@
         android:layout_width="79dp"
         android:layout_height="79dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/nuevaSeccion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="0.96"
         app:srcCompat="@drawable/agregar" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="400dp"
+        android:id="@+id/nuevaSeccion"
+        android:layout_width="245dp"
         android:layout_height="50dp"
-        android:background="#CCCCCC"
+        android:background="#CEB2E3"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Agregar sección"
         android:inputType="textMultiLine"
+        android:textColorHint="#757373"
         android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <Button
+        android:id="@+id/agregarSeccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/round_button"
+        android:text="Agregar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.965" />
 
 

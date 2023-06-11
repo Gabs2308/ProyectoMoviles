@@ -36,6 +36,22 @@ public class DAO {
         db.insert("tareas", null, registro);
         db.close();
     }
+
+    public static void insertarSeccion(Context c, Seccion seccion){
+        SQLiteOpenHelperManager manager = new SQLiteOpenHelperManager(c);
+        SQLiteDatabase db = manager.getWritableDatabase();
+
+        int idUsuario = seccion.getId_usuario();
+        String nombre = seccion.getNombre();
+
+        ContentValues registro = new ContentValues();
+        registro.put("id_usuario", idUsuario);
+        registro.put("nombre", nombre);
+
+        db.insert("secciones",null,registro);
+        db.close();
+
+    }
     public static ArrayList<Tarea> mostrarTareas(Context c, String idUsuario){
         SQLiteOpenHelperManager manager = new SQLiteOpenHelperManager(c);
         SQLiteDatabase db = manager.getReadableDatabase();

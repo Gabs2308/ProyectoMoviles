@@ -60,6 +60,7 @@ public class SQLiteOpenHelperManager extends SQLiteOpenHelper {
         );
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
 

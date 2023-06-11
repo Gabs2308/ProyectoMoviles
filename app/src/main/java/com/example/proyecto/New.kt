@@ -32,9 +32,9 @@ class New : AppCompatActivity() {
         val spinnerSecciones: Spinner = findViewById(R.id.spSecciones)
         val btnFecha: Button = findViewById(R.id.btnFecha)
 
-        val prioridades = listOf("Select a priority","1", "2", "3")
+        val prioridades = listOf("Seleccionar una prioridad","1", "2", "3")
         val secciones = DAO.mostrarSecciones(this, idUsuario)
-        secciones.add(0, "Select a section")
+        secciones.add(0, "Seleccione una sección")
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, prioridades)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
