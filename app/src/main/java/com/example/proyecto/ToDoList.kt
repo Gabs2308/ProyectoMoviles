@@ -33,10 +33,14 @@ class ToDoList : AppCompatActivity() {
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemList)
         listView.adapter = adapter
 
-
+        // Se toca para modificar
         listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedText = itemList[position]
-            // Realizar acción al seleccionar un elemento de la lista
+            val selectedText = listView.getItemAtPosition(position).toString()
+            val idTarea = DAO.getIDTarea(this,selectedText,idUsuario)
+            val intent = Intent(this, Modify::class.java)
+            intent.putExtra("IdUsuario", idUsuario)
+            intent.putExtra("Tarea", idTarea)
+            startActivity(intent)
         }
 
         val marginVertical = resources.getDimensionPixelSize(com.google.android.material.R.dimen.mtrl_card_checked_icon_margin) // Define el valor del margen vertical en dimens.xml
@@ -56,7 +60,6 @@ class ToDoList : AppCompatActivity() {
         }
 
         nuevatareabtn.setOnClickListener {
-
             val intent = Intent(this, New::class.java)
             intent.putExtra("IdUsuario", idUsuario)
             startActivity(intent)

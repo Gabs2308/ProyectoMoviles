@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Modify">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E4D9D9"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
+
+    <Spinner
+        android:id="@+id/spSecciones"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:background="#AED7F3"
+        android:backgroundTintMode="multiply"
+        android:contentDescription="Seleccione una seccion"
+        android:contextClickable="true"
+        android:foregroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spPriority"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="200dp"
+        android:layout_height="71dp"
+        android:backgroundTint="#E86666"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFecha"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextTextDescript"
+        android:layout_width="311dp"
+        android:layout_height="54dp"
+        android:background="#AED7F3"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hapticFeedbackEnabled="false"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:textColorHint="#656060"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextTittle"
+        app:layout_constraintVertical_bias="0.089" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Modificando Tarea"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <EditText
+        android:id="@+id/editTextTextTittle"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:background="#AED7F3"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hapticFeedbackEnabled="false"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        android:textColorHint="#656060"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <Spinner
+        android:id="@+id/spPriority"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:background="#AED7F3"
+        android:backgroundTintMode="multiply"
+        android:contentDescription="Seleccione una prioridad"
+        android:contextClickable="true"
+        android:foregroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextDescript"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <Button
+        android:id="@+id/btnFecha"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:background="#AED7F3"
+        android:backgroundTintMode="multiply"
+        android:drawableTintMode="multiply"
+        android:text="Seleccionar Fecha"
+        android:textAlignment="textStart"
+        android:textColor="#656060"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spSecciones"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="200dp"
+        android:layout_height="71dp"
+        android:backgroundTint="#83EF88"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFecha"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
