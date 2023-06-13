@@ -3,6 +3,7 @@ package com.example.proyecto
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.provider.MediaStore.Audio.Radio
 import android.view.View
@@ -34,12 +35,16 @@ class ToDoList : AppCompatActivity() {
         val secciones = DAO.mostrarSecciones(this, idUsuario)
         var itemList = DAO.mostrarTareas(this, idUsuario)
 
+        //Lista de CheckBoxes marcados
+        val checkedItems = mutableListOf<String>()
+
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemList)
         listView.adapter = adapter
 
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, secciones)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerSecciones.adapter = adapter2
+
 
         // Se toca para modificar
         listView.setOnItemClickListener { _, _, position, _ ->
@@ -78,6 +83,30 @@ class ToDoList : AppCompatActivity() {
                     layoutParams.setMargins(0, marginVertical, 0, marginVertical)
 
                     radioButtonLayout.addView(checkBox, layoutParams)
+
+                    checkBox.setOnCheckedChangeListener { _, isChecked ->
+                        val checkedItem = itemList[radioButtonLayout.indexOfChild(checkBox)]
+                        if (isChecked) {
+                            checkedItems.add(checkedItem)
+                        } else {
+                            checkedItems.remove(checkedItem)
+                        }
+                        setStrikeThrough()
+                    }
+                }
+            }
+
+            private fun setStrikeThrough() {
+                for (i in 0 until listView.count) {
+                    val view = listView.getChildAt(i)
+                    if (view is TextView) {
+                        val listItem = view.text.toString()
+                        if (checkedItems.contains(listItem)) {
+                            view.paintFlags = view.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                        } else {
+                            view.paintFlags = view.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+                        }
+                    }
                 }
             }
 

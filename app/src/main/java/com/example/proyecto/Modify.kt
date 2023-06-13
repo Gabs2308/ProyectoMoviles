@@ -55,6 +55,7 @@ class Modify : AppCompatActivity() {
         val seccionPos: Int = adapter2.getPosition(nombreSeccion)
         spinnerSecciones.setSelection(seccionPos)
         btnFecha.text = tarea.fecha
+        fecha = tarea.fecha
 
         btnFecha.setOnClickListener {
             val partes = btnFecha.text.split("/")
