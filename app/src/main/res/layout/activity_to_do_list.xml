@@ -1,113 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    tools:context=".ToDoList">
+    android:fillViewport="true">
 
-
-    <ImageView
-        android:id="@+id/imageView3"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fondo"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="356dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="623dp"
-        android:gravity="center"
-        android:text="TO DO LIST"
-        android:textColor="#000000"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
-
-
-    <RadioGroup
-        android:id="@+id/radioButtonLayout"
-        android:layout_width="70dp"
-        android:layout_height="450dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/listView"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0"></RadioGroup>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="314dp"
-        android:layout_height="450dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/nuevatareabtn"
-        android:layout_width="79dp"
-        android:layout_height="79dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/nuevaSeccion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.96"
-        app:srcCompat="@drawable/agregar" />
-
-    <EditText
-        android:id="@+id/nuevaSeccion"
-        android:layout_width="245dp"
-        android:layout_height="50dp"
-        android:background="#CEB2E3"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Agregar sección"
-        android:inputType="textMultiLine"
-        android:textColorHint="#757373"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.963" />
-
-    <Button
-        android:id="@+id/agregarSeccion"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:background="@drawable/round_button"
-        android:text="Agregar"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        android:background="#feb9bc"
+        tools:context=".ToDoList">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fondo"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="356dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="623dp"
+            android:gravity="center"
+            android:text="TO DO LIST"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.06" />
+
+
+        <Spinner
+            android:id="@+id/spSecciones"
+            android:layout_width="311dp"
+            android:layout_height="50dp"
+            android:background="#AED7F3"
+            android:backgroundTintMode="multiply"
+            android:contentDescription="Seleccione una seccion"
+            android:contextClickable="true"
+            android:foregroundTint="#FFFFFF"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.185" />
+
+        <RadioGroup
+            android:id="@+id/radioButtonLayout"
+            android:layout_width="42dp"
+            android:layout_height="358dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintStart_toEndOf="@+id/listView"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.339"></RadioGroup>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="284dp"
+            android:layout_height="355dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.345" />
+
+        <ImageView
+            android:id="@+id/nuevatareabtn"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/nuevaSeccion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.96"
+            app:srcCompat="@drawable/agregar" />
+
+        <EditText
+            android:id="@+id/nuevaSeccion"
+            android:layout_width="245dp"
+            android:layout_height="50dp"
+            android:background="#feb9bc"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Agregar sección"
+            android:inputType="textMultiLine"
+            android:textColorHint="#757373"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.108"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.963" />
+
+        <Button
+            android:id="@+id/agregarSeccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/round_button"
+            android:text="Agregar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.958"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.965" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

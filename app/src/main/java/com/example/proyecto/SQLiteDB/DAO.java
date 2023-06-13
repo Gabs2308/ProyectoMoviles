@@ -70,6 +70,26 @@ public class DAO {
         db.close();
         return tareas;
     }
+    public static ArrayList<String> mostrarTareasXSeccion(Context c, String idUsuario, String seccion){
+        SQLiteOpenHelperManager manager = new SQLiteOpenHelperManager(c);
+        SQLiteDatabase db = manager.getReadableDatabase();
+
+        int seccionElegida = idSeccion(c,seccion,Integer.parseInt(idUsuario));
+
+        Cursor cursor = db.rawQuery("SELECT titulo FROM tareas WHERE id_usuario=" + idUsuario + " AND id_seccion="+seccionElegida, null);
+        ArrayList<String> tareas = new ArrayList<>();
+
+        String tarea;
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                tarea = cursor.getString(0);
+                tareas.add(tarea);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return tareas;
+    }
 
     public static ArrayList<String> mostrarSecciones(Context c, String idUsuario){
         SQLiteOpenHelperManager manager = new SQLiteOpenHelperManager(c);
